@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post, Logger } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ProblemPromptEntity } from './entities/ProblemPrompt.entity';
+import { PostPythonDto } from './entities/PostPython.dto';
 
 // class PostPythonDto {
 //   headers: any;
@@ -9,10 +10,7 @@ import { ProblemPromptEntity } from './entities/ProblemPrompt.entity';
 //     ProblemPrompt: ProblemPromptEntity;
 //   }
 // }
-export class PostPythonDto {
-  code: string;
-  ProblemPrompt: ProblemPromptEntity;
-}
+
 
 @Controller()
 export class AppController {

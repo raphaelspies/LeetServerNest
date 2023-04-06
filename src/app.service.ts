@@ -1,21 +1,32 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PlaceholderProblemPrompt, ProblemPromptEntity } from './entities/ProblemPrompt.entity';
 import * as fs from 'fs';
+import { PythonShell } from 'python-shell';
 
 import { PostPythonDto } from './entities/PostPython.dto';
 
 @Injectable()
 export class AppService {
-  private readonly logger = new Logger(AppService.name)
+  private readonly logger = new Logger(AppService.name);
 
   getProblemPrompt(): ProblemPromptEntity {
     return PlaceholderProblemPrompt;
   }
 
   postPythonProblem({code, ProblemPrompt}: PostPythonDto) {
-    fs.writeFileSync('pythonCode.py', code)
-    console.log(fs.readFileSync("pythonCode.py", "utf-8"))
+    fs.writeFileSync('pythonCode.py', code);
+    // fs.writeFileSync('tests.py', ProblemPrompt.tests)
+    // console.log(fs.readFileSync("pythonCode.py", "utf-8"));
     // TO DO: 
-    return "python problem output!"
+    return this.executePython();
+  }
+
+  executePython() {
+    return PythonShell.run('encrypt.test.py', {scriptPath: 'problems/', pythonOptions: ['-u']}).then(result => {
+      let memo = []
+      result.forEach(item => memo.push(Boolean(item)))
+      console.log(`memo: ${memo}`)
+      return memo;
+    })
   }
 }
