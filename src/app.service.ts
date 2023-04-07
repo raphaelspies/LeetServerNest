@@ -15,8 +15,8 @@ export class AppService {
 
   postPythonProblem({code, ProblemPrompt}: PostPythonDto) {
     console.log(this.getProblemPrompt().tests)
-    fs.writeFileSync(__dirname + '/userFiles/encrypt.py', code);
-    fs.writeFileSync(__dirname + '/userFiles/test.py', this.getProblemPrompt().tests)
+    fs.writeFileSync(__dirname + '/../userFiles/encrypt.py', code);
+    fs.writeFileSync(__dirname + '/../userFiles/test.py', this.getProblemPrompt().tests)
     // fs.writeFileSync('tests.py', ProblemPrompt.tests)
     // console.log(fs.readFileSync("pythonCode.py", "utf-8"));
     // TO DO: 

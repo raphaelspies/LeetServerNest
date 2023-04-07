@@ -37,3 +37,4 @@ lerna-debug.log*
 # Program-specific files
 PythonCode.py
 /problems
+/userFiles
