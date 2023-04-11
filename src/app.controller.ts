@@ -3,15 +3,6 @@ import { AppService } from './app.service';
 import { ProblemPromptEntity } from './entities/ProblemPrompt.entity';
 import { PostPythonDto } from './entities/PostPython.dto';
 
-// class PostPythonDto {
-//   headers: any;
-//   data: {
-//     code: string;
-//     ProblemPrompt: ProblemPromptEntity;
-//   }
-// }
-
-
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
