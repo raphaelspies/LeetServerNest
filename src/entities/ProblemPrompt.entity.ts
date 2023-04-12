@@ -1,3 +1,5 @@
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+
 export interface ProblemPromptEntity {
   problemNumber: number;
   problemTitle: string;
@@ -7,6 +9,41 @@ export interface ProblemPromptEntity {
   stub: string;
   dependencies?: string[];
 }
+
+@Entity()
+export class ProblemPromptORM {
+  @PrimaryGeneratedColumn()
+  problemNumber: number;
+
+  @Column({ length: 80 })
+  problemTitle: string;
+
+  @Column({ length: 255 })
+  description: string;
+  
+  @Column("text")
+  tests: string; 
+  
+  // @Column()
+  // testResults?: boolean[];
+  
+  @Column("text")
+  stub: string;
+  
+  // @OneToMany(() => CodeDependency)
+  // dependencies?: string[];
+}
+
+@Entity()
+export class UserData {
+  @PrimaryGeneratedColumn()
+  problemNumber: number;
+
+  @Column("text")
+  code: string;
+
+}
+
 
 export const PlaceholderProblemPrompt: ProblemPromptEntity = {
   problemNumber: 1,

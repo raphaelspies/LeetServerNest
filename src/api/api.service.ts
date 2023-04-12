@@ -1,13 +1,13 @@
 import { Injectable, Logger } from '@nestjs/common';
-import { PlaceholderProblemPrompt, ProblemPromptEntity } from './entities/ProblemPrompt.entity';
+import { PlaceholderProblemPrompt, ProblemPromptEntity } from '../entities/ProblemPrompt.entity';
 import * as fs from 'fs';
 import { PythonShell } from 'python-shell';
 
-import { PostPythonDto } from './entities/PostPython.dto';
+import { PostPythonDto } from '../entities/PostPython.dto';
 
 @Injectable()
-export class AppService {
-  private readonly logger = new Logger(AppService.name);
+export class ApiService {
+  private readonly logger = new Logger(ApiService.name);
 
   getProblemPrompt(): ProblemPromptEntity {
     return PlaceholderProblemPrompt;
