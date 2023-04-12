@@ -5,7 +5,7 @@ import { ProblemPromptORM } from '../entities/ProblemPrompt.entity'
 @Injectable()
 export class DBService {
   constructor(
-    @Inject('Problem_REPOSITORY')
+    @Inject('PROBLEM_REPOSITORY')
     private problemRepository: Repository<ProblemPromptORM>,
   ) {}
 
