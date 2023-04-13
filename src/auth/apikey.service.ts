@@ -1,6 +1,5 @@
 import { Injectable, UnauthorizedException } from "@nestjs/common";
 import * as dotenv from 'dotenv'
-import { ConfigService } from "@nestjs/config";
 
 dotenv.config()
 const expectedKey = process.env.API_KEY;

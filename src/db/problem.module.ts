@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { databaseProviders } from './db.providers';
 import { DBService } from './db.service';
 import { ProblemProviders } from './problem.providers';
 import { DatabaseModule } from './db.module';
@@ -9,7 +8,7 @@ import { ApiKeyService } from 'src/auth/apikey.service';
 @Module({
   controllers: [DBController],
   imports: [DatabaseModule, AuthModule],
-  // exports: [...ProblemProviders],
+  exports: [],
   providers: [...ProblemProviders, DBService, ApiKeyService],
 })
 export class ProblemModule {}
