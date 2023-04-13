@@ -1,10 +1,10 @@
-import { Param, Body, Controller, Get, Post, Logger } from '@nestjs/common';
-import { ProblemPromptEntity } from '../entities/ProblemPrompt.entity';
-import { PostPythonDto } from '../dtos/PostPython.dto';
+import { Param, Body, Controller, Get, Post, Logger, UseGuards } from '@nestjs/common';
 import { DBService } from 'src/db/db.service';
 import { CreateProblemDto } from 'src/dtos/createProblem.dto';
+import { ApiKeyGuard } from 'src/auth/apikey.guard';
 
 @Controller()
+@UseGuards(ApiKeyGuard)
 export class DBController {
   constructor(private readonly dbService: DBService) {}
   private readonly logger = new Logger(DBService.name)

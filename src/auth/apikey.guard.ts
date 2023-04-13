@@ -1,13 +1,14 @@
-// import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
-// import { Observable } from 'rxjs';
+import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common';
+import { Observable } from 'rxjs';
+import { ApiKeyService } from './apikey.service'
 
-// @Injectable()
-// export class ApiKeyGuard implements CanActivate {
-//   canActivate(
-//     context: ExecutionContext,
-//   ): boolean | Promise<boolean> | Observable<boolean> {
-//     const request = context.switchToHttp().getRequest();
-//     const key = request.headers['x-api-key'] ?? request.query.api_key;
-//     return this.(request);
-//   }
-// }
+@Injectable()
+export class ApiKeyGuard implements CanActivate {
+  constructor(private readonly apiKeyService: ApiKeyService) {} // made up service for the point of the exmaple
+
+  async canActivate(context: ExecutionContext): Promise<boolean> {
+    const req = context.switchToHttp().getRequest();
+    const key = req.headers['x-api-key'];
+    return this.apiKeyService.isKeyValid(key);
+  }
+}
