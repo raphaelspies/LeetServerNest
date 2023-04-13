@@ -14,7 +14,7 @@ async function bootstrap() {
     app.enableCors();
     Logger.log('CORS ready in dev environment');
   }
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({enableDebugMessages: true}));
 
   await app.listen(8000);
 }

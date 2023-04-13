@@ -10,9 +10,14 @@ export class DBController {
   private readonly logger = new Logger(DBService.name)
 
   @Post('/problems/python')
-  createPythonProblem(@Body('body') body: CreateProblemDto) {
-    this.logger.log('Created new Python problem')
+  createPythonProblem(@Body() body: CreateProblemDto) {
+    this.logger.log('Created new Python problem');
     return this.dbService.createProblem(body);
+  }
+
+  @Get('/problems/python/all')
+  getAllProblems() {
+    return this.dbService.getAllProblems()
   }
 
   @Get('/problems/python/:id')
@@ -21,9 +26,6 @@ export class DBController {
     return this.dbService.getProblem(id)
   }
 
-  @Get('/problems/python/all')
-  getAllProblems() {
-    return this.dbService.getAllProblems()
-  }
+
 }
 
