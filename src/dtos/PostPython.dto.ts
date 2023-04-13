@@ -1,4 +1,4 @@
-import { ProblemPromptEntity } from "./ProblemPrompt.entity";
+import { ProblemPromptEntity } from "../entities/ProblemPrompt.entity";
 
 export class PostPythonDto {
   code: string;

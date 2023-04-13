@@ -3,7 +3,7 @@ import { PlaceholderProblemPrompt, ProblemPromptEntity } from '../entities/Probl
 import * as fs from 'fs';
 import { PythonShell } from 'python-shell';
 
-import { PostPythonDto } from '../entities/PostPython.dto';
+import { PostPythonDto } from '../dtos/PostPython.dto';
 
 @Injectable()
 export class ApiService {

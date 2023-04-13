@@ -1,7 +1,7 @@
 import { Body, Controller, Get, Post, Logger } from '@nestjs/common';
 import { ApiService } from './api.service';
 import { ProblemPromptEntity } from '../entities/ProblemPrompt.entity';
-import { PostPythonDto } from '../entities/PostPython.dto';
+import { PostPythonDto } from '../dtos/PostPython.dto';
 
 @Controller()
 export class ApiController {
