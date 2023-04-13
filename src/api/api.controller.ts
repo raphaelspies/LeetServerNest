@@ -1,12 +1,12 @@
 import { Body, Controller, Get, Post, Logger } from '@nestjs/common';
-import { AppService } from './app.service';
-import { ProblemPromptEntity } from './entities/ProblemPrompt.entity';
-import { PostPythonDto } from './entities/PostPython.dto';
+import { ApiService } from './api.service';
+import { ProblemPromptEntity } from '../entities/ProblemPrompt.entity';
+import { PostPythonDto } from '../dtos/PostPython.dto';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
-  private readonly logger = new Logger(AppService.name)
+export class ApiController {
+  constructor(private readonly appService: ApiService) {}
+  private readonly logger = new Logger(ApiService.name)
 
   @Get('/python')
   getProblemPrompt(): ProblemPromptEntity {
