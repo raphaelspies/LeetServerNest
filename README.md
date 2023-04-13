@@ -13,11 +13,17 @@ $ npm install
 ```
 sudo service start docker
 ```
-2. Start leetcode-db container
+
+2. Verify that Docker is running
+```
+sudo service docker status
+```
+
+3. Start leetcode-db container
 ```
 docker-compose up -d
 ```
-3. Start app
+4. Start app
 (see below)
 
 ## Running the app

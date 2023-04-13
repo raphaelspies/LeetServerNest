@@ -1,6 +1,5 @@
 import { DataSource } from 'typeorm';
 import { ProblemPromptORM } from '../entities/ProblemPrompt.entity';
-import { databaseProviders } from './db.providers'
 
 export const ProblemProviders = [{
   provide: 'PROBLEM_REPOSITORY',
