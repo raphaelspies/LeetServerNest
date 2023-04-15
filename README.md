@@ -11,7 +11,7 @@ $ npm install
 ## Running the database
 1. Start docker
 ```
-sudo service start docker
+sudo service docker start
 ```
 
 2. Verify that Docker is running

@@ -1,4 +1,4 @@
-import { Param, Body, Controller, Get, Post, Logger, UseGuards } from '@nestjs/common';
+import { Param, Body, Controller, Get, Post, Logger, UseGuards, ParseIntPipe } from '@nestjs/common';
 import { DBService } from 'src/db/db.service';
 import { CreateProblemDto } from 'src/dtos/createProblem.dto';
 import { ApiKeyGuard } from 'src/auth/apikey.guard';
@@ -21,7 +21,7 @@ export class DBController {
   }
 
   @Get('/problems/python/:id')
-  getPythonProblem(@Param() id: number) {
+  getPythonProblem(@Param("id", ParseIntPipe) id: number) {
     // will fail if the requested id doesn't exist
     return this.dbService.getProblem(id)
   }
