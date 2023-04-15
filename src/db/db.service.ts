@@ -11,12 +11,12 @@ export class DBService {
   ) {}
 
   async getProblem(problemNumber: number): Promise<ProblemPromptORM> {
-    return this.problemRepository.findOneBy({
+    return this.problemRepository.findOneByOrFail({
       problemNumber
     });
   }
 
-  async getAllProblems(): Promise<ProblemPromptORM[]> {
+async getAllProblems(): Promise<ProblemPromptORM[]> {
     return this.problemRepository.find();
   }
 
