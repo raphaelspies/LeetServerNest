@@ -1,8 +1,8 @@
 import { DataSource } from 'typeorm';
-import { ProblemPromptORM } from '../entities/ProblemPrompt.entity';
+import { ProblemPromptEntity } from '../entities/ProblemPrompt.entity';
 
 export const ProblemProviders = [{
   provide: 'PROBLEM_REPOSITORY',
-  useFactory: (dataSource: DataSource) => dataSource.getRepository(ProblemPromptORM),
+  useFactory: (dataSource: DataSource) => dataSource.getRepository(ProblemPromptEntity),
   inject: ['DATA_SOURCE']
 }]

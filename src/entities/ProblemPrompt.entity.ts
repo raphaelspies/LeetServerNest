@@ -1,17 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
-export interface ProblemPromptEntity {
-  problemNumber: number;
-  problemTitle: string;
-  description: string;
-  tests: string; 
-  testResults?: boolean[];
-  stub: string;
-  dependencies?: string[];
-}
-
 @Entity()
-export class ProblemPromptORM {
+export class ProblemPromptEntity {
   @PrimaryGeneratedColumn()
   problemNumber: number;
 
@@ -24,26 +14,15 @@ export class ProblemPromptORM {
   @Column("text")
   tests: string; 
   
-  // @Column()
-  // testResults?: boolean[];
-  
   @Column("text")
   stub: string;
   
-  // @OneToMany(() => CodeDependency)
-  // dependencies?: string[];
 }
 
-@Entity()
-export class UserData {
-  @PrimaryGeneratedColumn()
-  problemNumber: number;
-
-  @Column("text")
-  code: string;
-
-}
-
+// export class ProblemPromptEntity extends ProblemPromptORM {
+//   testResults?: boolean[];
+//   dependencies?: string[];
+// }
 
 export const PlaceholderProblemPrompt: ProblemPromptEntity = {
   problemNumber: 1,
@@ -86,5 +65,5 @@ def encryptTest(): \n
 		return False \n \n
 	
 encryptTest()\n`,
-  testResults: [true, false, true]
+  // testResults: [true, false, true]
 }

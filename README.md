@@ -1,6 +1,7 @@
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+LeetCipher is a dynamic website where you can code along while learning the basics of cryptography!
+This repo contains the server upon which to run the [LeetCipher client.](https://github.com/raphaelspies/LeetCipherClient)
 
 ## Installation
 
@@ -53,5 +54,12 @@ $ npm run test:cov
 ```
 
 ## Dependencies
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- [Nestjs](https://docs.nestjs.com).
+- [TypeScript](https://www.typescriptlang.org/)
+- [TypeORM](https://typeorm.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [node-postgres](https://www.npmjs.com/package/pg)
+- [python-shell](https://www.npmjs.com/package/python-shell)
+- [Docker](https://www.docker.com/)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
